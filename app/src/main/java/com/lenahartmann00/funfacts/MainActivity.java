@@ -1,7 +1,7 @@
 package com.lenahartmann00.funfacts;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -10,11 +10,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private FactBook factBook = new FactBook();
     private ColorWheel colorWheel = new ColorWheel();
-    //Declare our View variables
     private TextView factTextView;
-    private Button  showFactButton;
-    RelativeLayout relativeLayout;
-
+    private Button showFactButton;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //Randomly select a fact
                 String fact = factBook.getFact();
-                //Update the screen with our new fact
+                //Update the screen with new fact
                 factTextView.setText(fact);
                 int color = colorWheel.getColor();
                 relativeLayout.setBackgroundColor(color);

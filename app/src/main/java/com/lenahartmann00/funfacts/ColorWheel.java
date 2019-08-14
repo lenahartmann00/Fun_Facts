@@ -2,7 +2,6 @@ package com.lenahartmann00.funfacts;
 
 import android.graphics.Color;
 
-import java.util.LinkedList;
 import java.util.Random;
 
 public class ColorWheel {
@@ -22,11 +21,12 @@ public class ColorWheel {
             "#f092b0", // pink
             "#b7c0c7"  // light gray
     };
-    int lastShownColor;
-    int getColor(){
+    private int lastShownColor;
+
+    int getColor() {
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(colors.length);
-        while(lastShownColor == randomNumber){
+        while (lastShownColor == randomNumber) {
             randomNumber = randomGenerator.nextInt(colors.length);
         }
         lastShownColor = randomNumber;

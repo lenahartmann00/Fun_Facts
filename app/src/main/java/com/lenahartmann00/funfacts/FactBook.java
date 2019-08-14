@@ -1,6 +1,7 @@
 package com.lenahartmann00.funfacts;
 
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 
 class FactBook {
@@ -210,28 +211,28 @@ class FactBook {
             "In Tokyo you can buy a toupee for your dog.",
             "A dime has 118 ridges around the edge."};
 
-    LinkedList lastShowedFacts = new LinkedList();
-    int maxSizeLastShownFacts = 10;
+    private Queue<Integer> lastShownFacts = new LinkedList<>();
+    private static final int MAX_SIZE_LAST_SHOWN_FACTS = 10;
 
-    //Methods - Actions the object can take
     String getFact() {
-        int randomNumber = createRandomNumberNotPartOfLastShownFacts();
+        int randomNumber = createRandomNumberNotLatelyShown();
         updateLastShownFacts(randomNumber);
         return facts[randomNumber];
     }
 
-    private int createRandomNumberNotPartOfLastShownFacts(){
+    private int createRandomNumberNotLatelyShown() {
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(facts.length);
-        while(lastShowedFacts.contains(randomNumber)) {
+        while (lastShownFacts.contains(randomNumber)) {
             randomNumber = randomGenerator.nextInt(facts.length);
         }
         return randomNumber;
     }
-    private void updateLastShownFacts(int randomNumber){
-        lastShowedFacts.add(randomNumber);
-        if(lastShowedFacts.size() >= maxSizeLastShownFacts){
-            lastShowedFacts.remove();
+
+    private void updateLastShownFacts(int randomNumber) {
+        lastShownFacts.add(randomNumber);
+        if (lastShownFacts.size() >= MAX_SIZE_LAST_SHOWN_FACTS) {
+            lastShownFacts.remove();
         }
     }
 }
