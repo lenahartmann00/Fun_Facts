@@ -214,7 +214,7 @@ class FactBook {
     private Queue<Integer> lastShownFacts = new LinkedList<>();
     private static final int MAX_SIZE_LAST_SHOWN_FACTS = 10;
 
-    String getFact() {
+    public String getFact() {
         int randomNumber = createRandomNumberNotLatelyShown();
         updateLastShownFacts(randomNumber);
         return facts[randomNumber];

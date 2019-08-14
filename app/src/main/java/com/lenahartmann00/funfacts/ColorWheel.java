@@ -23,7 +23,7 @@ public class ColorWheel {
     };
     private int lastShownColor;
 
-    int getColor() {
+    public int getColor() {
         Random randomGenerator = new Random();
         int randomNumber = randomGenerator.nextInt(colors.length);
         while (lastShownColor == randomNumber) {
