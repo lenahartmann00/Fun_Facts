@@ -1,5 +1,6 @@
 # Fun_Facts
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/dcf2875e23b74b6884633661efd957e1)](https://www.codacy.com/app/lenahartmann00/Fun_Facts?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lenahartmann00/Fun_Facts&amp;utm_campaign=Badge_Grade)<br>
+![Screenshot](funfacts.png)
 Show some fun facts with this android app
 
 ## Description
